@@ -69,10 +69,8 @@ const getAllEditoras = async () => {
   '/editoras',
   {headers: {'Authorization' : `Bearer ${dadosUsuario.token}`}}
   ).then( resultado => {
-    // console.log('Dados das Editoras: ' + JSON.stringify(resultado.data));
     setDadosEditora(resultado.data);
   }).catch((error) => {
-    // console.log('Ocorreu um erro ' + JSON.stringify(error));
   });
 };
 

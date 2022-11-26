@@ -9,6 +9,11 @@ import { DataContext } from '../../context/DataContext';
 import { DadosLivroType } from '../../models/DadosLivroType';
 import { incrementLocalData, removeLocalData, retrieveLocalData, storeLocalData } from '../../services/LocalStorageService';
 
+
+const addFavorite = (dadosLivro:DadosLivroType) => {
+  incrementLocalData('favoritos', dadosLivro);
+};
+
 const HomeEditora = ({route, navigation}) => {
     const {id} = route.params;
 
@@ -44,15 +49,11 @@ const HomeEditora = ({route, navigation}) => {
           <Card.Cover source={{uri: item.urlImagem}} />
           </TouchableOpacity>
           <Card.Actions style={{justifyContent:'center'}}>
-            <Button onPress={() => addFavorite(dadosLivro)}><Ionicons name="heart-circle" color="#000" size={36} /></Button>
+          <Button onPress={() => addFavorite(item)}><Ionicons name="heart-circle" color="#000" size={36} /></Button>
             <Button onPress={() => addCart(item.codigoLivro)}><Ionicons name="cart" color="#000" size={36} /></Button>
           </Card.Actions>
         </Card>
         );
-      };
-
-      const addFavorite = (dadosLivro:DadosLivroType) => {
-        incrementLocalData('Favoritos', dadosLivro);
       };
 
     const getLivroByEditora = async () => {

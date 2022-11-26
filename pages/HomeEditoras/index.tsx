@@ -48,7 +48,7 @@ const HomeEditoras = ({navigation}) => {
       };
 
       const renderItem = ({ item }) => {
-        const backgroundColor = item.codigoEditora === selectedId ? '#38936D' : '#3DF4A7';
+        const backgroundColor = item.codigoEditora === selectedId ? '#30413a' : '#9defcd';
         const color = item.codigoEditora === selectedId ? 'white' : 'black';
 
         const navigateToEditoraHome = (id:any) => {
@@ -103,14 +103,15 @@ const HomeEditoras = ({navigation}) => {
             padding: 20,
             marginVertical: 8,
             marginHorizontal: 10,
-            width: 300,
-            height: 85,
+            width: 320,
+            height: 120,
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 20,
           },
           title: {
-            fontSize: 22,
+            fontSize: 30,
+            textAlign: 'center',
           },
         });
 

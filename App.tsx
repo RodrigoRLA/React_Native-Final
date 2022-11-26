@@ -20,10 +20,10 @@ const BottomNavigator = () => {
       screenOptions={{
         headerShown:false,
         tabBarStyle:{backgroundColor: '#f4511e'},
-        tabBarLabelStyle:{fontSize: 14},
+        tabBarLabelStyle:{fontSize: 16},
         tabBarActiveTintColor:'#000',
         tabInactiveTintColor: '#fff',
-        tabBarLabelStyle:{fontSize:14},
+        tabBarLabelStyle:{fontSize:16},
       }}
     >
       <TabBottomNavigation.Screen name="HomeTabScreen" component={Home}

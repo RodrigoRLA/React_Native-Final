@@ -9,6 +9,10 @@ import { DataContext } from '../../context/DataContext';
 import { DadosLivroType } from '../../models/DadosLivroType';
 import { incrementLocalData, removeLocalData, retrieveLocalData, storeLocalData } from '../../services/LocalStorageService';
 
+const addFavorite = (dadosLivro:DadosLivroType) => {
+  incrementLocalData('favoritos', dadosLivro);
+};
+
 const HomeLivro = ({route, navigation}) => {
     const {id} = route.params;
 
@@ -18,10 +22,6 @@ const HomeLivro = ({route, navigation}) => {
     const [selectedLivro, setSelectedLivro] = useState(0);
     const [dadosLivro, setDadosLivro] = useState<DadosLivroType>();
     const [carregar, setCarregar] = useState(false);
-
-    const addFavorite = (dadosLivro:DadosLivroType) => {
-      incrementLocalData('favoritos', dadosLivro);
-    };
 
     useEffect(() => {
         getLivroById();
@@ -81,7 +81,6 @@ export const styles = StyleSheet.create({
       marginTop:50,
       justifyContent: 'flex-end',
       alignItems: 'center',
-
     },
     conteudo:{
       flex: 0.5,
@@ -101,9 +100,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'flex-start',
       alignItems: 'center',
-
     },
-
   });
 
 export default HomeLivro;
